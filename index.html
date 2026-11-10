@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Process Excellence | Kecemerlangan Proses</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav>
+  <b>PE&nbsp;Hub</b>
+  <a href="#agile" data-i18n="n_agile"></a><a href="#lss" data-i18n="n_lss"></a><a href="#dt" data-i18n="n_dt"></a><a href="#pick" data-i18n="n_pick"></a>
+  <div class="lang" role="group" aria-label="Language / Bahasa">
+    <button data-l="en" aria-pressed="true">EN</button><button data-l="ms" aria-pressed="false">BM</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1 data-i18n="h_title"></h1>
+    <p data-i18n="h_sub"></p>
+    <div class="stats">
+      <div><strong data-count="3.4">0</strong><span data-i18n="s1"></span></div>
+      <div><strong data-count="2">0</strong><span data-i18n="s2"></span></div>
+      <div><strong data-count="5">0</strong><span data-i18n="s3"></span></div>
+    </div>
+  </div>
+  <svg class="ring" viewBox="0 0 320 320" role="group" aria-label="Process excellence">
+    <circle class="track" cx="160" cy="160" r="110"/>
+    <g class="spin"><circle cx="160" cy="50" r="7" fill="var(--accent)"/></g>
+    <circle cx="160" cy="160" r="62" fill="var(--card)" stroke="var(--line)" class="pulse"/>
+    <text id="ringLabel" x="160" y="158">Process Excellence</text>
+    <text id="ringSub" x="160" y="176"></text>
+    <g class="node" tabindex="0" data-go="agile" data-k="Agile"><circle cx="160" cy="50" r="34" fill="var(--ag)"/><text x="160" y="50">Ag</text></g>
+    <g class="node" tabindex="0" data-go="lss" data-k="Lean Six Sigma"><circle cx="255" cy="215" r="34" fill="var(--ls)"/><text x="255" y="215">6σ</text></g>
+    <g class="node" tabindex="0" data-go="dt" data-k="Design Thinking"><circle cx="65" cy="215" r="34" fill="var(--dt)"/><text x="65" y="215">DT</text></g>
+  </svg>
+</section>
+
+<section id="agile">
+  <div class="head"><i></i><h2 data-i18n="a_t"></h2></div>
+  <p class="lead" data-i18n="a_l"></p>
+  <div class="board" id="board"></div>
+  <div class="bar"><i id="aBar"></i></div>
+  <div class="row"><span id="aTxt"></span><button class="link" id="aReset" data-i18n="reset"></button></div>
+  <div class="tags" id="aTags"></div>
+</section>
+
+<section id="lss">
+  <div class="head"><i></i><h2 data-i18n="l_t"></h2></div>
+  <p class="lead" data-i18n="l_l"></p>
+  <div class="split">
+    <div>
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div class="panel" id="dmaic" aria-live="polite"></div>
+    </div>
+    <div class="panel">
+      <h3 data-i18n="sig_t"></h3>
+      <p style="color:var(--mute)" data-i18n="sig_d"></p>
+      <label for="sig" class="tool">σ = <span id="sigV">3</span></label>
+      <input type="range" id="sig" min="1" max="6" step="1" value="3">
+      <div class="big" id="dpmo">0</div>
+      <div style="color:var(--mute);font-size:14px" data-i18n="dpmo"></div>
+      <div class="bar" style="--c:var(--ls)"><i id="yBar"></i></div>
+      <div class="row"><span data-i18n="yield"></span><b id="yTxt"></b></div>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:18px">
+    <h3 data-i18n="w_t"></h3>
+    <p style="color:var(--mute);margin:0" data-i18n="w_d"></p>
+    <div class="waste" id="waste"></div>
+    <div class="row" style="margin-top:14px"><b id="wCount"></b></div>
+  </div>
+</section>
+
+<section id="dt">
+  <div class="head"><i></i><h2 data-i18n="d_t"></h2></div>
+  <p class="lead" data-i18n="d_l"></p>
+  <div class="steps" id="steps"><div class="fill" id="fill"></div></div>
+  <div class="panel" id="dtBody" aria-live="polite"></div>
+  <div class="nav2"><button class="btn ghost" id="prev"></button><button class="btn" id="next"></button></div>
+</section>
+
+<section id="pick">
+  <div class="head"><i></i><h2 data-i18n="p_t"></h2></div>
+  <p class="lead" data-i18n="p_l"></p>
+  <div class="opts" id="opts"></div>
+  <div class="panel" id="rec" aria-live="polite"></div>
+</section>
+
+<footer data-i18n="foot"></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
